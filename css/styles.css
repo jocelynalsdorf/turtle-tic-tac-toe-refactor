@@ -1,7 +1,14 @@
-#result {
+#show-contact {
   display: none;
-  padding-top: 15px;
-  font-size: 35px;
+}
+
+.contact {
+  cursor: pointer;
+  color: #0088cc;
+}
+
+.contact:hover {
+  text-decoration: underline;
 }
 
 .well {
