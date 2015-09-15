@@ -12,14 +12,48 @@
 }
 
 .well {
-  margin-top: 25px;
+  margin-top: 15px;
 }
 
 .address-holder {
-  min-height: 615px;
+  height: 508px;
 }
 
 .inner.well {
   background-color: white;
-  border: 2px solid grey;
+  border: 2px solid green;
+}
+
+h1, h2, h3 {
+  font-family: 'Walter Turncoat', cursive;
+  color: green;
+}
+h1 {
+  font-size: 60px;
+  color: green;
+  margin-bottom: 0;
+
+  margin-top: 5px;
+}
+.top-img {
+  display:inline;
+  height:65px;
+}
+.btn-primary {
+  background-color: green;
+  border-color: green;
+}
+.btn-primary:hover {
+  background-color: darkgreen;
+  border-color: darkgreen;
+}
+.btn-default {
+  background-color: orange;
+  border-color: orange;
+  color:white;
+}
+.btn-default:hover {
+  background-color: darkorange;
+  border-color: darkorange;
+  color: white;
 }

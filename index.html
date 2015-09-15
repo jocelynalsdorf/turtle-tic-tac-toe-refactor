@@ -6,13 +6,16 @@
     <script src="js/jquery-1.11.3.js"></script>
     <script src="js/scripts.js"></script>
      <link rel="stylesheet" href="css/animate.css">
+     <link href='https://fonts.googleapis.com/css?family=Walter+Turncoat' rel='stylesheet' type='text/css'>
     <title>Teepee Addresses</title>
   </head>
   <body>
     <div class="container">
       <div class="row">
+
+      <h1 class="main-title text-center"><img class="top-img" src="css/tp.jpg" alt="tp roll">  TeePee Tracker <img class="top-img" src="css/tp.jpg" alt="tp roll"></h1> 
         <div class="col-md-6 well">
-          <h1>Houses to TeePee Address Book</h1>
+        <h2 class="secondary-title text-center">Potential Victims</h2>
           <form id="new-contact">
 
             <div class="form-group">
@@ -41,27 +44,38 @@
               </div>
             </div>
 
-            <span class="btn btn-primary" id="add-address">Another address</span>
+            <span class="btn btn-primary" id="add-address">Add Addresses</span>
 
-            <button type="submit" class="btn">Add</button>
+            <button type="submit" class="btn btn-default">Add</button>
           </form>
           
         </div> 
     
         <div class="col-md-6 well address-holder">
-        <h2>Contacts:</h2>
+        <h2 class="secondary-title text-center">Tracked Victims</h2>
+
           <ul id="contacts">
           </ul>
 
           <div id="show-contact" class="inner well">
             <h2></h2>
 
-            <p>First name: <span class="first-name"></span></p>
-            <p>Last name: <span class="last-name"></span></p>
-            <p>Addresses: </p>
-            <ul id="addresses"></ul>
+            <p class="sub-title">First name: <span class="first-name"></span></p>
+            <p class="sub-title">Last name: <span class="last-name"></span></p>
+            <p class="sub-title">Addresses: </p>
+            <ul id="addresses" class="sub-title-list"></ul>
           </div>
         </div>
+
+        <div class="row">
+       
+        <div class="col-md-12 well top">
+        <dl>
+          <dt>Teepeeing</dt>
+          <dd>The act of throwing rolls upon rolls of toilet paper over/around/in trees, on cars, over the house, and on the lawn. This is often done by minors towards their friends, neighbors, or acquaintances. This act usually includes other items, such as eggs(see Egging), bird feed, corn kernels, honey, forks, spoons, honey, bologna, and anything else one wishes to use against their victim. Note that bologna removes paint from cars when it dries.</dd>
+          </dl>
+        </div>
+      </div>
     </div> 
     </div>
   </body>
