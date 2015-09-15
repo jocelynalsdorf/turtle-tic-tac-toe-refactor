@@ -1,12 +1,10 @@
-describe('addressbook', function() {
-  // it("returns a string", function() {
-  //   expect(replacer("bob is great", "bob", "Sam")).to.be.a("string");
-  // });
-
-  // it("replaces one word ", function() {
-  //   expect(replacer("bob", "bob", "Sam")).to.equal("Sam");
-  // });
-
+describe('Contact', function() {
+  it("creates a new contact with the given specifications", function(){
+    var testContact = new Contact("rita", "moreno");
+    expect(testContact.firstName).to.equal("rita");
+    expect(testContact.lastName).to.equal("moreno");
+    expect(testContact.addresses).to.eql([]);
+  });
   
 
 });
