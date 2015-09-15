@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/scripts.js"></script>
+    <title>Word Replacer</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Dangerous Word Replacer</h1>
+
+      <form id="replacer">
+        <div class="form-group">
+          <label for="sentence">Enter a sentence:</label>
+          <input id="sentence" type="text">
+        </div>
+        <div class="form-group">
+          <label for="word">Enter a word from the sentence to replace:</label>
+          <input id="word" type="text">
+        </div>
+        <div class="form-group">
+          <label for="replacement">Enter a word from the sentence to replace:</label>
+          <input id="replacement" type="text">
+        </div>
+
+        <button type="submit" class="btn">Change My Life!</button>
+      </form>
+
+      <div id="result">
+        <p>Your new sentence is: <span class="final"></span>.</p>
+      </div>
+    </div>
+  </body>
+</html>
