@@ -28,16 +28,32 @@ Drink.prototype.price = function(quantity){
       } else {
         totalPrice += 1;
       }
+      if(this.booze === "tequila" || this.booze === "gin") {
+        totalPrice += 2;
+      } else {
+        totalPrice += 1;
+      }
 
 
 
   } else {
-
     totalPrice += 3
+    if(this.fruit === "olive" || this.fruit === "orange" ){
+        totalPrice += 2;
+      } else {
+        totalPrice +=1;
+      }
+      if(this.syrup === "triple-sec" || this.syrup === "spicy") {
+        totalPrice += 2;
+      } else {
+        totalPrice += 1;
+      }
+      if(this.booze === "tequila" || this.booze === "gin") {
+        totalPrice += 2;
+      } else {
+        totalPrice += 1;
+      }
   }
-
-
-
 
   return totalPrice;
 }
