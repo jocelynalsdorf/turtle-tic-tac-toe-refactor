@@ -7,6 +7,7 @@
 //   this.;
 // }
 
+//function Board()
 
 
 
@@ -16,22 +17,25 @@
 //   $("input#player2name").val("");
 //   };
 
-// // $(document).ready(function(){
+$(document).ready(function(){
 
-// $("form#new-game").submit(function(event){
-//   event.preventDefault();
+ $("#play").click(function(event){
+   event.preventDefault();
+   $("#inner-div").append("<div class='game-area'><div class='row'><div class='col-md-4 odd'></div><div class='col-md-4 even'></div><div class='col-md-4 odd'></div></div><div class='row'><div class='col-md-4 even'></div><div class='col-md-4 odd'></div><div class='col-md-4 even'></div></div><div class='row'><div class='col-md-4 odd'></div><div class='col-md-4 even'></div><div class='col-md-4 odd'></div></div></div>");
 
-//   var player1name = $("input#player1name").val();
-//   var player2name = $("input#player2name").val(); 
-  
-
-  
 
 //   $(".player-one-score").text(blankfornow));
 //   $(".player-two-score").text(blankfornow));
   
-
 //   //resetFields();
 
-//   });//end of submit event
-// });//end of file
+   });//end of submit event
+
+ $("#reset").click(function(event){
+   event.preventDefault();
+   $(".game-area").remove();
+
+ });
+
+
+ });//end of file
