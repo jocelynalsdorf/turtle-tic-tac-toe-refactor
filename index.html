@@ -6,11 +6,11 @@
     <script src="js/jquery-1.11.3.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/cyborg/bootstrap.min.css" rel="stylesheet" integrity="sha256-ZgJYmqb5jZ8WCDqIYHlUarCVI7NDkBCeFnMW1gfihwY= sha512-yK8VlGnQXDlAH4aaZwd0EfmkYwv/XwZaA7VcT9JDO1YeZSvzu94p7/btLABkerIR26o7uYIiEmY59gQv/w/itA==" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/flatly/bootstrap.min.css" rel="stylesheet" integrity="sha256-sHwgyDk4CGNYom267UJX364ewnY4Bh55d53pxP5WDug= sha512-mkkeSf+MM3dyMWg3k9hcAttl7IVHe2BA1o/5xKLl4kBaP0bih7Mzz/DBy4y6cNZCHtE2tPgYBYH/KtEjOQYKxA==" crossorigin="anonymous">
     <link href='https://fonts.googleapis.com/css?family=Cherry+Cream+Soda' rel='stylesheet' type='text/css'>
      <link rel="stylesheet" href="css/animate.css">
      
-    <title>Drink Maker</title>
+    <title>Tic-Tac-Toe For Turtles</title>
   </head>
   <body>
     <nav class="navbar navbar-inverse">
@@ -22,7 +22,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">GET YOUR DRINK ON</a>
+          <a class="navbar-brand" href="#">Highly Competitive Tic-Tac-Toe for Turtles</a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
         </div>
@@ -32,175 +32,14 @@
     <div class="container">
       <div class="row">
    
-        <div class="col-md-6 well">
-   <!-- start section for base inputs, size, name, quantity -->          
-         <form id="new-drink">
-          <h3 class="titles">Step 1: Pick Your Base</h3>
-          <div>
-            <label for="club-soda" class="radio-inline">
-              <input type="radio" name="base-type" value="club-soda" id="club-soda">Club Soda
-            </label>
+        <div class="col-md-8 col-md-offest-2">
+          <div id="inner-div"></div>
+          <div id="score-div">
+          <p>Player 1: <span class="player-one-score"></span>
+          Player 2: <span class="player-two-score"></span></p>
           </div>
 
-          <div>
-            <label for="tomato-juice" class="radio-inline">
-              <input type="radio" name="base-type" value="tomato-juice" id="tomato-juice">Tomato Juice
-            </label>
-          </div>
-
-          <div>
-            <label for="fruit-juice" class="radio-inline">
-              <input type="radio" value="fruit-juice" name="base-type"  id="fruit-juice">Fruit Juice
-            </label>
-          </div>
-
-          <div>
-            <label for="coke" class="radio-inline">
-              <input type="radio" name="base-type"  value="coke" id="coke">Coke
-            </label>
-          </div>
-        <br>
-
-        <h3 class="titles">Step 2: What size?</h3>
-          <div>
-            <label for="short" class="radio-inline">
-             <input type="radio" name="drink-size" value="short" id="short">Short
-            </label>
-          </div>
-          <div>
-           <label for="tall" class="radio-inline">
-             <input type="radio" name="drink-size" value="tall" id="tall">Tall
-            </label>
-          </div>
-
-        <h3 class="titles">Step 3: How many drinks?</h3>
-            <div class="form-group"></label>
-              <input type="text" class="form-control" id="how-many" placeholder="enter a number">
-            </div>
-
-        <h3 class="titles">Step 4: Who is buying your drinks?</h3>
-          <div class="form-group">
-            <input type="text" class="form-control" id="drink-name" placeholder="enter a name">
-          </div>
-
-      </div><!--close of first col-md-6
-
-<!-- start section for mixins inputs --> 
-      <div class="col-md-6 right-col well">
-        <h3 class="titles">Step 5: Choose your 3 mixins:</h3>
-        <div class="alcohol">
-          <h4 class="titles-sm">Choice 1: Alcohol type:</h4>
-          <div>
-            <label for="rum" class="radio-inline">
-              <input type="radio" name="booze-type" value="rum" id="rum">Rum
-            </label>
-          </div>
-
-          <div>
-            <label for="vodka" class="radio-inline">
-              <input type="radio" name="booze-type" value="vodka" id="vodka">Vodka
-            </label>
-          </div>
-
-          <div>
-            <label for="tequila" class="radio-inline">
-              <input type="radio" value="tequila" name="booze-type"  id="tequila">Tequila
-            </label>
-          </div>
-
-          <div>
-            <label for="gin" class="radio-inline">
-              <input type="radio" name="booze-type"  value="gin" id="gin">Gin
-            </label>
-          </div>
-        </div>
-
-        <div class="fruit">
-          <h4 class="titles-sm">Choice 2: Fruit type:</h4>
-          <div>
-            <label for="orange" class="radio-inline">
-              <input type="radio" name="fruit-type" value="orange" id="orange">Orange
-            </label>
-          </div>
-
-          <div>
-            <label for="lime" class="radio-inline">
-              <input type="radio" name="fruit-type" value="lime" id="lime">Lime
-            </label>
-          </div>
-
-          <div>
-            <label for="olive" class="radio-inline">
-              <input type="radio" value="olive" name="fruit-type"  id="olive">Olives
-            </label>
-          </div>
-
-          <div>
-            <label for="cherry" class="radio-inline">
-              <input type="radio" name="fruit-type"  value="cherry" id="cherry">Cherry
-            </label>
-          </div>
-        </div><!-- end of fruit div -->
-
-        <div class="syrup">
-          <h4 class="titles-sm">Choice 2: Syrup type:</h4>
-          <div>
-            <label for="triple-sec" class="radio-inline">
-              <input type="radio" name="syrup-type" value="triple-sec" id="triple-sec">Triple
-            </label>
-          </div>
-
-          <div>
-            <label for="grenadine" class="radio-inline">
-              <input type="radio" name="syrup-type" value="grenadine" id="grenadine">grenidine
-            </label>
-          </div>
-
-          <div>
-            <label for="coconut" class="radio-inline">
-              <input type="radio" value="coconut" name="syrup-type"  id="coconut">Coconut
-            </label>
-          </div>
-
-          <div>
-            <label for="spicy" class="radio-inline">
-              <input type="radio" name="syrup-type"  value="spicy" id="spicy">Spicy
-            </label>
-          </div>
-        </div><!-- end of syrup div -->
-
-     </div> <!--close of second col-md-6   -->
-    </div><!--end of row 1 -->
- 
-    <div class="row">
-
-      <div class="col-md-8 col-md-offset-2 bottom">
-        <button type="submit" class="btn btn-danger btn-block" data-toggle="modal" data-target="#frontModal">Make my Drink!</button>
-        </form>
-      </div><!-- end of col-8 btn div -->
-
-    </div><!-- end of row 2 -- >
-
-
-<!-- hidden model -->
-    <div class="modal fade" id="frontModal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
-            <h3 class="modal-title">Here is your total cost: $<span class="cost-span"></span></h3>
-          </div>
-          <div class="modal-body">
-            <p>Here are the details on the order for <span class="name-info"></span>:
-            <p>You ordered <span class="quantity-info"></span> <span class="size-info"> </span>
-            <span class="base-info"></span> and <span class="booze-info"></span>'s with <span class="syrup-info"></span> and <span class="fruit-info"></span>!</p>
-            <p><span class="final">Enjoy your drinks!</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
+      </div><!-- end of col-8 -->
     </div>
   </div> 
 </body>
