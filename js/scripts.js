@@ -15,8 +15,7 @@ Drink.prototype.price = function(quantity){
     totalPrice = 1;
   }
 
-
-  if(this.base === "tomato-juice" || this.base === "fruit-juice" ){
+    if(this.base === "tomato-juice" || this.base === "fruit-juice" ){
       totalPrice += 4;
       if(this.fruit === "olive" || this.fruit === "orange" ){
         totalPrice += 2;
@@ -33,30 +32,27 @@ Drink.prototype.price = function(quantity){
       } else {
         totalPrice += 1;
       }
+    } else {
+      totalPrice += 3
+      if(this.fruit === "olive" || this.fruit === "orange" ){
+          totalPrice += 2;
+        } else {
+          totalPrice +=1;
+        }
+        if(this.syrup === "triple-sec" || this.syrup === "spicy") {
+          totalPrice += 2;
+        } else {
+          totalPrice += 1;
+        }
+        if(this.booze === "tequila" || this.booze === "gin") {
+          totalPrice += 2;
+        } else {
+          totalPrice += 1;
+        }
+    }
 
-
-
-  } else {
-    totalPrice += 3
-    if(this.fruit === "olive" || this.fruit === "orange" ){
-        totalPrice += 2;
-      } else {
-        totalPrice +=1;
-      }
-      if(this.syrup === "triple-sec" || this.syrup === "spicy") {
-        totalPrice += 2;
-      } else {
-        totalPrice += 1;
-      }
-      if(this.booze === "tequila" || this.booze === "gin") {
-        totalPrice += 2;
-      } else {
-        totalPrice += 1;
-      }
-  }
-
-  return totalPrice;
-}
+      return totalPrice * quantity;
+    }
 
 
 
@@ -86,6 +82,18 @@ $("form#new-drink").submit(function(event){
 
 
   console.log(newDrink.price(howManyDrinks));
+  $(".cost-span").text(newDrink.price(howManyDrinks));
+
+  $(".base-info").text(baseType);
+  $(".size-info").text(drinkSize);
+  $(".name-info").text(drinkName);
+  $(".booze-info").text(boozeType);
+  $(".syrup-info").text(syrupType);
+  $(".fruit-info").text(fruitType);
+  $(".quantity-info").text(howManyDrinks);
+
+
+
 //     $(".new-address").each(function() {
 //       var inputtedStreet = $(this).find("input.new-street").val();
 //       var inputtedCity = $(this).find("input.new-city").val();
@@ -113,7 +121,7 @@ $("form#new-drink").submit(function(event){
 //     $("ul#addresses").text(newContact.address);
 //     });
 
-//     resetFields();
+    // resetFields();
 
   });//end of submit event
 });//end of file
