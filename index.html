@@ -14,30 +14,27 @@
   </head>
   <body>
     <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">GET YOUR DRINK ON</a>
-    </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-    </div>
-  </div>
-</nav>
-
-
-
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">GET YOUR DRINK ON</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+        </div>
+      </div>
+    </nav>
 
     <div class="container">
       <div class="row">
+   
         <div class="col-md-6 well">
-
+   <!-- start section for base inputs, size, name, quantity -->          
          <form id="new-drink">
-<!-- start section for base inputs, size, name, quantity -->  
           <h3 class="titles">Step 1: Pick Your Base</h3>
           <div>
             <label for="club-soda" class="radio-inline">
@@ -87,7 +84,6 @@
           </div>
 
       </div><!--close of first col-md-6
-<!-- end section for base inputs --> 
 
 <!-- start section for mixins inputs --> 
       <div class="col-md-6 right-col well">
@@ -185,28 +181,27 @@
 
     </div><!-- end of row 2 -- >
 
-<!-- hidden modal -->
 
 <!-- hidden model -->
-  <div class="modal fade" id="frontModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
-        <h3 class="modal-title">Here is your total cost: $<span class="cost-span"></span></h3>
-      </div>
-      <div class="modal-body">
-        <p>Here are the details on the order for <span class="name-info"></span>:
-        <p>You ordered <span class="quantity-info"></span> <span class="size-info"> </span>
-        <span class="base-info"></span> and <span class="booze-info"></span>'s with <span class="syrup-info"></span> and <span class="fruit-info"></span>!</p>
-        <p><span class="final">Enjoy your drinks!</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+    <div class="modal fade" id="frontModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+            <h3 class="modal-title">Here is your total cost: $<span class="cost-span"></span></h3>
+          </div>
+          <div class="modal-body">
+            <p>Here are the details on the order for <span class="name-info"></span>:
+            <p>You ordered <span class="quantity-info"></span> <span class="size-info"> </span>
+            <span class="base-info"></span> and <span class="booze-info"></span>'s with <span class="syrup-info"></span> and <span class="fruit-info"></span>!</p>
+            <p><span class="final">Enjoy your drinks!</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
   </div> 
 </body>
 </html>
