@@ -10,13 +10,13 @@ describe('Drink', function() {
   });
 
   it("returns correct price for tall drink with the tomato or juice base", function(){
-    var testDrink = new Drink("tomato-juice", "tall","todd", "rum", "lime", "coconut");
+    var testDrink = new Drink("tomato-juice", "tall","todd", "rum", "lime", "grenidine");
     expect(testDrink.base).to.equal("tomato-juice");
     expect(testDrink.size).to.equal("tall");
     expect(testDrink.name).to.equal("todd");
     expect(testDrink.booze).to.equal("rum");
     expect(testDrink.fruit).to.equal("lime");
-    expect(testDrink.syrup).to.equal("coconut");
+    expect(testDrink.syrup).to.equal("grenidine");
     expect(testDrink.price(1)).to.equal(10);
   });
 
@@ -32,7 +32,7 @@ describe('Drink', function() {
   });
 
   it("returns correct price for short drink with the club soda or coke base", function(){
-    var testDrink = new Drink("coke", "short","jerry", "gin", "olive", "coconut");
+    var testDrink = new Drink("coke", "short","jerry", "gin", "orange", "coconut");
     expect(testDrink.price(1)).to.equal(9);
   });
 

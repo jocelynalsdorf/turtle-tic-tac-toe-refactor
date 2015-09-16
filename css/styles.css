@@ -2,58 +2,41 @@
   display: none;
 }
 
-.contact {
-  cursor: pointer;
-  color: #0088cc;
+.right-col {
+  height: 463px;
 }
 
-.contact:hover {
-  text-decoration: underline;
+.col-md-6.well {
+  color: white;
+  background-color:#888888;
 }
 
-.well {
+.bottom {
+  margin-bottom: 50px;
+  margin-top:15px;
+}
+
+a.navbar-brand {
+  font-size: 50px;
+  text-align: center;
   margin-top: 15px;
+  margin-bottom: 15px;
+  font-family: 'Cherry Cream Soda', cursive;
 }
+ .titles, .titles-sm{
+  font-family: 'Cherry Cream Soda', cursive;
+  color: #111111;
 
-.address-holder {
-  height: 508px;
 }
-
-.inner.well {
-  background-color: white;
-  border: 2px solid green;
-}
-
-h1, h2, h3 {
-  font-family: 
-  
-}
-h1 {
-  font-size: 60px;
-  color: green;
-  margin-bottom: 0;
-
+.titles {
+  font-size: 27px;
   margin-top: 5px;
 }
-.top-img {
-  display:inline;
-  height:65px;
+.titles-sm {
+  font-size: 22px;
 }
-.btn-primary {
-  background-color: green;
-  border-color: green;
-}
-.btn-primary:hover {
-  background-color: darkgreen;
-  border-color: darkgreen;
-}
-.btn-default {
-  background-color: orange;
-  border-color: orange;
+.modal-titel .modal-content p {
   color:white;
-}
-.btn-default:hover {
-  background-color: darkorange;
-  border-color: darkorange;
-  color: white;
+  font-family: 'Cherry Cream Soda', cursive;
+
 }
