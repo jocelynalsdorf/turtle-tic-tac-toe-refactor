@@ -1,22 +1,16 @@
-function Drink(base, size) {
+function Drink(base, size, name, booze, fruit, syrup) {
   this.base = base;
   this.size = size;
-  this.mixins = [];
+  this.name = name;
+  this.booze = booze;
+  this.fruit = fruit;
+  this.syrup = syrup;
 }
 
-Drink.prototype.price = function(){
+Drink.prototype.price = function(quantity){
   
 }
 
-function Mixin(itemOne, itemTwo, itemThree) {
-  this.itemOne = itemOne;
-  this.itemTwo = itemTwo;
-  this.itemThree = itemThree;
-}
-
-Mixin.prototype.addons = function(){
-  
-}
 
 
 var resetFields = function(){
@@ -33,15 +27,15 @@ $("form#new-drink").submit(function(event){
   var baseType = $('input[name="base-type"]:checked').val();
   var drinkSize = $('input[name="drink-size"]:checked').val(); 
   var howManyDrinks = parseInt($("input#how-many").val());
-  var inputtedDrinkName = $("input#drink-name").val();
+  var drinkName = $("input#drink-name").val();
   var boozeType = $('input[name="booze-type"]:checked').val();   
   var fruitType = $('input[name="fruit-type"]:checked').val(); 
   var syrupType = $('input[name="syrup-type"]:checked').val(); 
 
-  console.log(drinkSize);
 
-//     var newContact = new Contact(inputtedFirstName, inputtedLastName);
 
+     var newDrink = new Drink(baseType, drinkSize, drinkName, boozeType, fruitType, syrupType);
+  console.log(newDrink);
 //     $(".new-address").each(function() {
 //       var inputtedStreet = $(this).find("input.new-street").val();
 //       var inputtedCity = $(this).find("input.new-city").val();
