@@ -32,14 +32,24 @@
     <div class="container">
       <div class="row">
    
-        <div class="col-md-8 col-md-offest-2">
-          <div id="inner-div"></div>
-          <div id="score-div">
-          <p>Player 1: <span class="player-one-score"></span>
-          Player 2: <span class="player-two-score"></span></p>
-          </div>
+        <div class="col-md-8">
+          <div id="inner-div" class="well">
+            
+          </div><!-- end of inner-div-->
 
-      </div><!-- end of col-8 -->
+        </div><!--end of col-9 -->  
+        <div class="col-md-4">
+          <div class="btn-group">
+            <div>
+              <button class="btn btn-success" id="play">Play Game</button>
+              <button class="btn btn-danger" id="reset">Reset Game</button>
+            </div>
+            <div id="score-div">
+              <p>Player 1: <span class="player-one-score"></span></p>
+              <p>Player 2: <span class="player-two-score"></span></p>
+            </div>
+          </div>
+        </div><!-- end of col-3 -->
     </div>
   </div> 
 </body>

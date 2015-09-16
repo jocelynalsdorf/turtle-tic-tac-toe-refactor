@@ -1,22 +1,22 @@
-function Game() {
-  this.;
-  this.;
-  this.;
-  this.;
-  this.;
-  this.;
-}
+// function Game() {
+//   this.;
+//   this.;
+//   this.;
+//   this.;
+//   this.;
+//   this.;
+// }
 
 
 
 
 
-var resetFields = function(){
-  $("input#player1name").val("");
-  $("input#player2name").val("");
-  };
+// var resetFields = function(){
+//   $("input#player1name").val("");
+//   $("input#player2name").val("");
+//   };
 
-// $(document).ready(function(){
+// // $(document).ready(function(){
 
 // $("form#new-game").submit(function(event){
 //   event.preventDefault();
