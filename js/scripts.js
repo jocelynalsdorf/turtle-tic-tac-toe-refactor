@@ -8,7 +8,38 @@ function Drink(base, size, name, booze, fruit, syrup) {
 }
 
 Drink.prototype.price = function(quantity){
-  
+  var totalPrice = 0;
+  if (this.size === "tall") {
+    totalPrice = 3;
+  } else {
+    totalPrice = 1;
+  }
+
+
+  if(this.base === "tomato-juice" || this.base === "fruit-juice" ){
+      totalPrice += 4;
+      if(this.fruit === "olive" || this.fruit === "orange" ){
+        totalPrice += 2;
+      } else {
+        totalPrice +=1;
+      }
+      if(this.syrup === "triple-sec" || this.syrup === "spicy") {
+        totalPrice += 2;
+      } else {
+        totalPrice += 1;
+      }
+
+
+
+  } else {
+
+    totalPrice += 3
+  }
+
+
+
+
+  return totalPrice;
 }
 
 
@@ -36,6 +67,9 @@ $("form#new-drink").submit(function(event){
 
      var newDrink = new Drink(baseType, drinkSize, drinkName, boozeType, fruitType, syrupType);
   console.log(newDrink);
+
+
+  console.log(newDrink.price(howManyDrinks));
 //     $(".new-address").each(function() {
 //       var inputtedStreet = $(this).find("input.new-street").val();
 //       var inputtedCity = $(this).find("input.new-city").val();
