@@ -20,26 +20,26 @@ Mixin.prototype.addons = function(){
 
 
 var resetFields = function(){
-  $("input#new-first-name").val("");
-  $("input#new-last-name").val("");
-  $("input#new-address").val("");
-  $("input.new-street").val("");
-  $("input.new-city").val("");
-  $("input.new-state").val("");
+  $("input#how-many").val("");
+  $("input#drink-name").val("");
   };
 
-// $(document).ready(function(){
-
-  
+$(document).ready(function(){
 
 
+$("form#new-drink").submit(function(event){
+  event.preventDefault();
 
- 
-//   $("form#new-contact").submit(function(event){
-//     event.preventDefault();
-//     var inputtedFirstName = $("input#new-first-name").val();
-//     var inputtedLastName = $("input#new-last-name").val();
-    
+  var baseType = $('input[name="base-type"]:checked').val();
+  var drinkSize = $('input[name="drink-size"]:checked').val(); 
+  var howManyDrinks = parseInt($("input#how-many").val());
+  var inputtedDrinkName = $("input#drink-name").val();
+  var boozeType = $('input[name="booze-type"]:checked').val();   
+  var fruitType = $('input[name="fruit-type"]:checked').val(); 
+  var syrupType = $('input[name="syrup-type"]:checked').val(); 
+
+  console.log(drinkSize);
+
 //     var newContact = new Contact(inputtedFirstName, inputtedLastName);
 
 //     $(".new-address").each(function() {
@@ -71,5 +71,5 @@ var resetFields = function(){
 
 //     resetFields();
 
-//   });//end of submit event
-// });//end of file
+  });//end of submit event
+});//end of file
