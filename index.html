@@ -6,77 +6,182 @@
     <script src="js/jquery-1.11.3.js"></script>
     <script src="js/scripts.js"></script>
      <link rel="stylesheet" href="css/animate.css">
-     <link href='https://fonts.googleapis.com/css?family=Walter+Turncoat' rel='stylesheet' type='text/css'>
-    <title>Teepee Addresses</title>
+     
+    <title>Drink Maker</title>
   </head>
   <body>
     <div class="container">
       <div class="row">
+      <h1 class="main-title text-center">Drink Maker</h1> 
+        <div class="col-md-6">
 
-      <h1 class="main-title text-center"><img class="top-img" src="css/tp.jpg" alt="tp roll">  TeePee Tracker <img class="top-img" src="css/tp.jpg" alt="tp roll"></h1> 
-        <div class="col-md-6 well">
-        <h2 class="secondary-title text-center">Potential Victims</h2>
-          <form id="new-contact">
+         <form id="new-drink">
+<!-- start section for base inputs -->  
+          <h3>Step 1: Pick Your Base</h3>
+          <div>
+            <label for="club-soda" class="radio-inline">
+              <input type="radio" name="base-type" value="club-soda" id="club-soda">club soda
+            </label>
+          </div>
 
-            <div class="form-group">
-              <label for="new-first-name">First name</label>
-              <input type="text" class="form-control" id="new-first-name">
+          <div>
+            <label for="tomato-juice" class="radio-inline">
+              <input type="radio" name="base-type" value="tomato-juice" id="tomato-juice">Tomato Juice
+            </label>
+          </div>
+
+          <div>
+            <label for="fruit-juice" class="radio-inline">
+              <input type="radio" value="fruit-juice" name="base-type"  id="fruit-juice">Fruit Juice
+            </label>
+          </div>
+
+          <div>
+            <label for="coke" class="radio-inline">
+              <input type="radio" name="base-type"  value="coke" id="coke">coke
+            </label>
+          </div>
+        <br>
+
+        <h3>Step 2: What size?</h3>
+          <div>
+            <label for="short" class="radio-inline">
+             <input type="radio" name="drink-size" value="short" id="short">short
+            </label>
+          </div>
+          <div>
+           <label for="tall" class="radio-inline">
+             <input type="radio" name="drink-size" value="tall" id="tall">tall
+            </label>
+          </div>
+
+        <h3>Step 3: How many drinks?</h3>
+            <div class="form-group"></label>
+              <input type="text" class="form-control" id="how-many" placeholder="enter a number">
             </div>
-            <div class="form-group">
-              <label for="new-last-name">Last name</label>
-              <input type="text" class="form-control" id="new-last-name">
-            </div>
 
-            <div id="new-addresses">
-              <div class="new-address">
-                <div class="form-group">
-                  <label for="new-street">Street</label>
-                  <input type="text" class="form-control new-street">
-                </div>
-                <div class="form-group">
-                  <label for="new-city">City</label>
-                  <input type="text" class="form-control new-city">
-                </div>
-                <div class="form-group">
-                  <label for="new-state">State</label>
-                  <input type="text" class="form-control new-state">
-                </div>
-              </div>
-            </div>
+        <h3>Step 4: What's your drinks name?</h3>
+          <div class="form-group">
+            <input type="text" class="form-control" id="drink-name" placeholder="enter your drinks name">
+          </div>
 
-            <span class="btn btn-primary" id="add-address">Add Addresses</span>
+      </div><!--close of first col-md-6
+<!-- end section for base inputs --> 
 
-            <button type="submit" class="btn btn-default">Add</button>
-          </form>
-          
-        </div> 
-    
-        <div class="col-md-6 well address-holder">
-        <h2 class="secondary-title text-center">Tracked Victims</h2>
+<!-- start section for mixins inputs --> 
+      <div class="col-md-6">
+        <h3>Step 5:Choose your 3 mixins:</h3>
+        <div class="alcohol">
+          <h4>Choice 1: Alcohol type:</h4>
+          <div>
+            <label for="rum" class="radio-inline">
+              <input type="radio" name="booze-type" value="rum" id="rum">Rum
+            </label>
+          </div>
 
-          <ul id="contacts">
-          </ul>
+          <div>
+            <label for="vodka" class="radio-inline">
+              <input type="radio" name="booze-type" value="vodka" id="vodka">Vodka
+            </label>
+          </div>
 
-          <div id="show-contact" class="inner well">
-            <h2></h2>
+          <div>
+            <label for="tequila" class="radio-inline">
+              <input type="radio" value="tequila" name="booze-type"  id="tequila">Tequila
+            </label>
+          </div>
 
-            <p class="sub-title">First name: <span class="first-name"></span></p>
-            <p class="sub-title">Last name: <span class="last-name"></span></p>
-            <p class="sub-title">Addresses: </p>
-            <ul id="addresses" class="sub-title-list"></ul>
+          <div>
+            <label for="gin" class="radio-inline">
+              <input type="radio" name="booze-type"  value="gin" id="gin">Gin
+            </label>
           </div>
         </div>
 
-        <div class="row">
-       
-        <div class="col-md-12 well top">
-        <dl>
-          <dt>Teepeeing</dt>
-          <dd>The act of throwing rolls upon rolls of toilet paper over/around/in trees, on cars, over the house, and on the lawn. This is often done by minors towards their friends, neighbors, or acquaintances. This act usually includes other items, such as eggs(see Egging), bird feed, corn kernels, honey, forks, spoons, honey, bologna, and anything else one wishes to use against their victim. Note that bologna removes paint from cars when it dries.</dd>
-          </dl>
-        </div>
-      </div>
+        <div class="fruit">
+          <h4>Choice 2: Fruit type:</h4>
+          <div>
+            <label for="orange" class="radio-inline">
+              <input type="radio" name="fruit-type" value="orange" id="orange">Orange
+            </label>
+          </div>
+
+          <div>
+            <label for="lime" class="radio-inline">
+              <input type="radio" name="fruit-type" value="lime" id="lime">lime
+            </label>
+          </div>
+
+          <div>
+            <label for="olive" class="radio-inline">
+              <input type="radio" value="olive" name="fruit-type"  id="olive">Olives
+            </label>
+          </div>
+
+          <div>
+            <label for="cherry" class="radio-inline">
+              <input type="radio" name="fruit-type"  value="cherry" id="cherry">cherry
+            </label>
+          </div>
+        </div><!-- end of fruit div -->
+
+        <div class="syrup">
+          <h4>Choice 2: Syrup type:</h4>
+          <div>
+            <label for="triple-sec" class="radio-inline">
+              <input type="radio" name="syrup-type" value="triple-sec" id="triple-sec">Triple
+            </label>
+          </div>
+
+          <div>
+            <label for="grenadine" class="radio-inline">
+              <input type="radio" name="syrup-type" value="grenadine" id="grenadine">grenidine
+            </label>
+          </div>
+
+          <div>
+            <label for="coconut" class="radio-inline">
+              <input type="radio" value="coconut" name="syrup-type"  id="coconut">Coconut
+            </label>
+          </div>
+
+          <div>
+            <label for="spicy" class="radio-inline">
+              <input type="radio" name="syrup-type"  value="spicy" id="spicy">spicy
+            </label>
+          </div>
+        </div><!-- end of syrup div -->
+
+      </div> <!--close of second col-md-6   -->
+
+    </div><!--end of row 1 -->
+ <!-- end section for base inputs -->   
+
+ <!-- start section for size inputs -->   
+  <div class="row">
+       <div class="col-md-4">
+          
+      </div><!--end of 1st col-md-4 -->
+ <!-- end section for size inputs -->          
+ <!-- start section for quantity inputs --> 
+
+        <div class="col-md-4">
+          
+        </div><!--end of 2nd col-md-4 -->
+      
+        <div class="col-md-4">
+          
+        </div><!--end of 3rd col-md-4 -->
+         <div class="col-md-8 col-md-offset-2">
+        <button type="submit" class="btn btn-danger btn-block">Make my Drink!</button>
+        </form>
+      </div><!-- end of button div -->
+
+    </div><!-- end of row 2 -- >
+    <div class="row">
+     
+      <div class="col-md-6">Stuff</div>     
+    </div><!-- end of row 3 -->
     </div> 
-    </div>
   </body>
 </html>
