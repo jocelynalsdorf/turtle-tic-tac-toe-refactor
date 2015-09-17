@@ -71,7 +71,69 @@ Game.prototype.toggleTurns = function(){
   this.playerTwo.changeTurns();
 };
 
+//figure out who wins
+Game.prototype.whoWins = function() {
+  var myBoard = this.board.board;
+  var winner = false;
 
+//will need to check x axis horizontal wins
+for(var x = 0; x < 3; x++) {
+  if( ((myBoard[x][0]) === (myBoard[x][1])) && ((myBoard[x][2]) === (myBoard[x][0])) ) {
+    if(this.playerOne.marker === myBoard[x][0]) {
+      winner = this.playerOne;
+    }
+    else if (this.playerTwo.marker === myBoard[x][0]) {
+      winner = this.playerTwo;
+    }
+  }
+}
+
+//will need to check y axis
+for(var y = 0; y < 3; y++) {
+  if( ((myBoard[0][y]) === (myBoard[1][y])) && ((myBoard[2][y]) === (myBoard[0][y])) ) {
+    if(this.playerOne.marker === myBoard[0][y]) {
+      winner = this.playerOne;
+    }
+    else if (this.playerTwo.marker === myBoard[0][y]) {
+      winner = this.playerTwo;
+
+    }
+  }
+}
+
+//will need to check diagonal axis
+if(myBoard[0][0] === myBoard[1][1] && myBoard[2][2] === myBoard[0][0]) {
+    if(this.playerOne === myBoard[0][0]) {
+      winner = this.playerOne;
+    }
+    else {
+      winner = this.playerTwo;
+    }
+  } else if(myBoard[2][0] === myBoard[1][1] && myBoard[0][2] === myBoard[2][0]) {
+    if(this.playerOne === myBoard[2][0]) {
+      winner = this.playerOne;
+    }
+    else {
+      winner = this.playerTwo;
+    }
+  }
+
+//check for draw 
+  if (winner === false) {
+   for(var row = 0; row < 3; row++) {
+      for(var col = 0; col < 3; col++){
+        if(myBoard[row][col] === null) {
+          return false;
+          break;
+        }
+        else {
+          winner = "draw";
+        }
+      }
+    }
+  }//end of 'draw' section
+return winner;
+};//end of whoWins method
 
 var makeBoardBackground = function(){
  $("#inner-div").append("<div class='game-area'><div class='row'><div class='col-md-4 odd'></div><div class='col-md-4 even'></div><div class='col-md-4 odd'></div></div><div class='row'><div class='col-md-4 even'></div><div class='col-md-4 odd'></div><div class='col-md-4 even'></div></div><div class='row'><div class='col-md-4 odd'></div><div class='col-md-4 even'></div><div class='col-md-4 odd'></div></div></div>");

@@ -71,12 +71,60 @@ describe('Game', function() {
     expect(testGame.playerTwo.isActive).to.equal(true);
   });
 
-  it("returns whose turn it is in a game", function(){
-    var testGame= new Game();
-    testGame.getTurns();
-    expect(testGame.playerOne.isActive).to.equal(true);
-    expect(testGame.playerTwo.isActive).to.equal(false);
+  it("returns the player whose turn it is in a game", function(){
+    var testGame = new Game();
+    expect(testGame.getTurns()).to.eql(testGame.playerOne); 
   });
+
+  it("has returns the winner based on which squares are marked(horizontal wins)", function(){
+    var testGame = new Game();
+    testGame.board.mark(0, 0, "X");
+    testGame.board.mark(0, 1, "X");
+    testGame.board.mark(0, 2, "X");
+    expect(testGame.whoWins()).to.equal(testGame.playerOne);
+  });
+
+  it("has returns the winner based on which squares are marked(vertical wins)", function(){
+    var testGame = new Game();
+    testGame.board.mark(0, 0, "O");
+    testGame.board.mark(1, 0, "O");
+    testGame.board.mark(2, 1, "O");
+    expect(testGame.whoWins()).to.equal(testGame.playerTwo);
+  });
+
+  it("has returns the winner based on which squares are marked(diagonal wins)", function(){
+    var testGame = new Game();
+    testGame.board.mark(0, 0, "O");
+    testGame.board.mark(1, 1, "O");
+    testGame.board.mark(2, 2, "O");
+    expect(testGame.whoWins()).to.equal(testGame.playerTwo);
+  });
+
+  it("has returns the winner based on which squares are marked(diagonal wins)", function(){
+    var testGame = new Game();
+    testGame.board.mark(0, 2, "O");
+    testGame.board.mark(1, 1, "O");
+    testGame.board.mark(2, 0, "O");
+    expect(testGame.whoWins()).to.equal(testGame.playerTwo);
+  });
+
+  it("has returns a DRAW based on which squares are marked with no wins", function(){
+    var testGame = new Game();
+    testGame.board.mark(0, 0, "X");
+    testGame.board.mark(1, 0, "O");
+    testGame.board.mark(2, 0, "X");
+    testGame.board.mark(0, 1, "X");
+    testGame.board.mark(1, 1, "O");
+    testGame.board.mark(2, 1, "O");
+    testGame.board.mark(0, 2, "O");
+    testGame.board.mark(1, 2, "X");
+    testGame.board.mark(2, 2, "X")
+    expect(testGame.whoWins()).to.equal("draw");
+  });
+
+
+
+
 
 
 
