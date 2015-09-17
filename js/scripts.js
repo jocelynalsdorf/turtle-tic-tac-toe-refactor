@@ -136,7 +136,7 @@ return winner;
 };//end of whoWins method
 
 var makeBoardBackground = function(){
- $("#inner-div").append("<div class='game-area'><div class='row'><div class='col-md-4 odd'></div><div class='col-md-4 even'></div><div class='col-md-4 odd'></div></div><div class='row'><div class='col-md-4 even'></div><div class='col-md-4 odd'></div><div class='col-md-4 even'></div></div><div class='row'><div class='col-md-4 odd'></div><div class='col-md-4 even'></div><div class='col-md-4 odd'></div></div></div>");
+ $("#inner-div").append("<div class='game-area'><div class='row'><div class='col-md-4 odd' id='tr'></div><div class='col-md-4 even' id='tc'></div><div class='col-md-4 odd' id='tl'></div></div><div class='row'><div class='col-md-4 even' id='mr'></div><div class='col-md-4 odd' id='mc'></div><div class='col-md-4 even' id='ml'></div></div><div class='row'><div class='col-md-4 odd' id='br'></div><div class='col-md-4 even' id='bc'></div><div class='col-md-4 odd' id='bl'></div></div></div>");
   };
 
 $(document).ready(function(){
@@ -144,12 +144,11 @@ $(document).ready(function(){
  $("#play").click(function(event){
    event.preventDefault();
    makeBoardBackground();
-   var myBoard = new Board();
-   console.log(myBoard);
-   var newGame = new Game();
-   console.log(newGame);
-//   $(".player-one-score").text(blankfornow));
-//   $(".player-two-score").text(blankfornow));
+   
+  
+   var game = new Game();
+   var myBoard = game.board;
+  $(".turnx").toggleClass(game.getTurns().marker);
 
    });//end of submit event
 
