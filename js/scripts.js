@@ -106,14 +106,14 @@ if(myBoard[0][0] === myBoard[1][1] && myBoard[2][2] === myBoard[0][0]) {
     if(this.playerOne === myBoard[0][0]) {
       winner = this.playerOne;
     }
-    else {
+    else if (this.playerTwo === myBoard[0][0]) {
       winner = this.playerTwo;
     }
   } else if(myBoard[2][0] === myBoard[1][1] && myBoard[0][2] === myBoard[2][0]) {
     if(this.playerOne === myBoard[2][0]) {
       winner = this.playerOne;
     }
-    else {
+    else if(this.playerTwo === myBoard[2][0]){
       winner = this.playerTwo;
     }
   }
@@ -146,19 +146,39 @@ $(document).ready(function(){
     //set up game
     makeBoardBackground();
     var game = new Game();
-    var myBoard = game.board;
+    var board = game.board;
 
     $(".turnx").toggleClass(game.getTurns().marker); //show whose turn it is
 
- 
+
 
   $("#tr").on("click", function(){
-   $(this).text("x");
+
+    if((!(board.isMarkedYet(0, 0))) && (game.whoWins() === false)) {
+       game.board.mark(0, 0, game.getTurns().marker);
+       $("#tr").text(game.getTurns().marker);
+       if (game.whoWins() === "draw") {
+        $("#results").text("its a draw");
+       } else if(game.whoWins()) {
+        $("#results").text(game.whoWins().marker + "wins!");
+       }
+    };  
+   
   });
 
 
   $("#tc").on("click", function(){
-   $(this).text("x");
+
+   if((!(board.isMarkedYet(0, 1))) && (game.whoWins() === false)) {
+       game.board.mark(0, 1, game.getTurns().marker);
+       $("#tc").text(game.getTurns().marker);
+       if (game.whoWins() === "draw") {
+        $("#results").text("its a draw");
+       } else if(game.whoWins()) {
+        $("#results").text(game.whoWins().marker + "wins!");
+       }
+    };
+      game.toggleTurns();
   });
 
 
