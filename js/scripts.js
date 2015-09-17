@@ -141,22 +141,69 @@ var makeBoardBackground = function(){
 
 $(document).ready(function(){
 
- $("#play").click(function(event){
-   event.preventDefault();
-   makeBoardBackground();
-   
-  
-   var game = new Game();
-   var myBoard = game.board;
-  $(".turnx").toggleClass(game.getTurns().marker);
+  $("#play").click(function(event){
+    event.preventDefault();
+    //set up game
+    makeBoardBackground();
+    var game = new Game();
+    var myBoard = game.board;
 
-   });//end of submit event
+    $(".turnx").toggleClass(game.getTurns().marker); //show whose turn it is
 
- $("#reset").click(function(event){
+ 
+
+  $("#tr").on("click", function(){
+   $(this).text("x");
+  });
+
+
+  $("#tc").on("click", function(){
+   $(this).text("x");
+  });
+
+
+  $("#tl").on("click", function(){
+   $(this).text("x");
+  });
+
+
+  $("#mr").on("click", function(){
+   $(this).text("x");
+  });
+
+  $("#mc").on("click", function(){
+   $(this).text("x");
+  });
+
+  $("#ml").on("click", function(){
+   $(this).text("x");
+  });
+
+  $("#br").on("click", function(){
+   $(this).text("x");
+  });
+
+  $("#bc").on("click", function(){
+   $(this).text("x");
+  });
+
+  $("#bl").on("click", function(){
+   $(this).text("x");
+  });
+
+
+
+
+
+
+
+
+
+  $("#reset").click(function(event){
    event.preventDefault();
    $(".game-area").remove();
 
- });
+  });
 
-
+   });//end of submit event
  });//end of file
