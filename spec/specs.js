@@ -58,9 +58,30 @@ describe('Game', function() {
     var testGame= new Game();
     expect(testGame).to.include.keys('playerTwo');
   });
+
   it("creates a new game with the correct specifications", function(){
     var testGame= new Game();
     expect(testGame).to.include.keys('board');
   });
+
+  it("toggles whose turn it is in a game", function(){
+    var testGame= new Game();
+    testGame.toggleTurns();
+    expect(testGame.playerOne.isActive).to.equal(false);
+    expect(testGame.playerTwo.isActive).to.equal(true);
+  });
+
+  it("returns whose turn it is in a game", function(){
+    var testGame= new Game();
+    testGame.getTurns();
+    expect(testGame.playerOne.isActive).to.equal(true);
+    expect(testGame.playerTwo.isActive).to.equal(false);
+  });
+
+
+
+
+
+
 
 });
