@@ -88,7 +88,7 @@ describe('Game', function() {
     var testGame = new Game();
     testGame.board.mark(0, 0, "O");
     testGame.board.mark(1, 0, "O");
-    testGame.board.mark(2, 1, "O");
+    testGame.board.mark(2, 0, "O");
     expect(testGame.whoWins()).to.equal(testGame.playerTwo);
   });
 

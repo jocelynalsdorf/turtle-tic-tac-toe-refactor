@@ -103,17 +103,17 @@ for(var y = 0; y < 3; y++) {
 
 //will need to check diagonal axis
 if(myBoard[0][0] === myBoard[1][1] && myBoard[2][2] === myBoard[0][0]) {
-    if(this.playerOne === myBoard[0][0]) {
+    if(this.playerOne.marker === myBoard[0][0]) {
       winner = this.playerOne;
     }
-    else if (this.playerTwo === myBoard[0][0]) {
+    else if (this.playerTwo.marker === myBoard[0][0]) {
       winner = this.playerTwo;
     }
   } else if(myBoard[2][0] === myBoard[1][1] && myBoard[0][2] === myBoard[2][0]) {
-    if(this.playerOne === myBoard[2][0]) {
+    if(this.playerOne.marker === myBoard[2][0]) {
       winner = this.playerOne;
     }
-    else if(this.playerTwo === myBoard[2][0]){
+    else if(this.playerTwo.marker === myBoard[2][0]){
       winner = this.playerTwo;
     }
   }
@@ -160,7 +160,7 @@ $(document).ready(function(){
        if (game.whoWins() === "draw") {
         $("#results").text("its a draw");
        } else if(game.whoWins()) {
-        $("#results").text(game.whoWins().marker + "wins!");
+        $("#results").text(game.whoWins().marker + " wins!");
        }
     } console.log(board);  
      game.toggleTurns();
@@ -174,7 +174,7 @@ $(document).ready(function(){
        if (game.whoWins() === "draw") {
         $("#results").text("its a draw");
        } else if(game.whoWins()) {
-        $("#results").text(game.whoWins().marker + "wins!");
+        $("#results").text(game.whoWins().marker + " wins!");
        }
     } console.log(board);
       game.toggleTurns();
@@ -188,7 +188,7 @@ $(document).ready(function(){
          if (game.whoWins() === "draw") {
           $("#results").text("its a draw");
          } else if(game.whoWins()) {
-          $("#results").text(game.whoWins().marker + "wins!");
+          $("#results").text(game.whoWins().marker + " wins!");
          }
       } console.log(board);
       game.toggleTurns();
@@ -202,7 +202,7 @@ $(document).ready(function(){
        if (game.whoWins() === "draw") {
         $("#results").text("its a draw");
        } else if(game.whoWins()) {
-        $("#results").text(game.whoWins().marker + "wins!");
+        $("#results").text(game.whoWins().marker + " wins!");
        }
     } console.log(board);
       game.toggleTurns();
@@ -215,7 +215,7 @@ $(document).ready(function(){
        if (game.whoWins() === "draw") {
         $("#results").text("its a draw");
        } else if(game.whoWins()) {
-        $("#results").text(game.whoWins().marker + "wins!");
+        $("#results").text(game.whoWins().marker + " wins!");
        }
     }console.log(board);
       game.toggleTurns();
@@ -228,7 +228,7 @@ $(document).ready(function(){
        if (game.whoWins() === "draw") {
         $("#results").text("its a draw");
        } else if(game.whoWins()) {
-        $("#results").text(game.whoWins().marker + "wins!");
+        $("#results").text(game.whoWins().marker + " wins!");
        }
     } console.log(board);
       game.toggleTurns();
@@ -241,7 +241,7 @@ $(document).ready(function(){
        if (game.whoWins() === "draw") {
         $("#results").text("its a draw");
        } else if(game.whoWins()) {
-        $("#results").text(game.whoWins().marker + "wins!");
+        $("#results").text(game.whoWins().marker + " wins!");
        }
     } console.log(board);
       game.toggleTurns();
@@ -254,7 +254,7 @@ $(document).ready(function(){
        if (game.whoWins() === "draw") {
         $("#results").text("its a draw");
        } else if(game.whoWins()) {
-        $("#results").text(game.whoWins().marker + "wins!");
+        $("#results").text(game.whoWins().marker + " wins!");
        }
     } console.log(board);
       game.toggleTurns();
@@ -267,7 +267,7 @@ $(document).ready(function(){
        if (game.whoWins() === "draw") {
         $("#results").text("its a draw");
        } else if(game.whoWins()) {
-        $("#results").text(game.whoWins().marker + "wins!");
+        $("#results").text(game.whoWins().marker + " wins!");
        }
     } console.log(board);
       game.toggleTurns();
