@@ -4,7 +4,7 @@
 function Player(marker, isActive) {
   this.marker = marker; //will be set to x or o
   this.isActive = isActive; //will be toggled t or f to know whose turn
-}
+};
 
 //can change turns by toggling isActive for a player 
 Player.prototype.changeTurns = function(){
@@ -14,7 +14,7 @@ Player.prototype.changeTurns = function(){
   else {
     isActive = true;
   }
-}
+};
 //make empty 2d array (will be all null) so can compare null vs != null to see if square is empty & can be played
 function Board() { 
   var boardSize = 3;
@@ -26,9 +26,24 @@ function Board() {
     }
   }
   this.board = board;
-}
+};
 
 
+
+Board.prototype.mark = function(xcord, ycord, marker){ //this marks a square with the current players marker
+  if(!this.isMarkedYet(xcord, ycord)) {
+    this.board[xcord][ycord] = marker;
+  }
+};
+
+Board.prototype.isMarkedYet = function(){ //checks if the array spot is null or not.if its not null it has been marked already
+  if(this.board[xcord][ycord] !== null){
+    return this.board[xcord][ycord];
+  } 
+  else {
+    return false;
+  }
+};
 
 
 function Game(){
@@ -38,7 +53,18 @@ function Game(){
   this.playerOne = playerOne;
   this.playerTwo = playerTwo;
   this.board = board;
+};
+
+Game.prototype.getTurns = function(){ //returns whose turn it is
+  if(this.playerOne.isActive === true) {
+    return this.playerOne;
+  }
+  else {
+    return this.playerTwo;
+  }
 }
+
+
 
 
 
