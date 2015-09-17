@@ -80,6 +80,8 @@ $(document).ready(function(){
    makeBoardBackground();
    var myBoard = new Board();
    console.log(myBoard);
+   var newGame = new Game();
+   console.log(newGame);
 //   $(".player-one-score").text(blankfornow));
 //   $(".player-two-score").text(blankfornow));
 

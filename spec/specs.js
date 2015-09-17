@@ -27,6 +27,22 @@ describe('Player', function() {
     var testPlayer= new Player("O", false);
     expect(testPlayer.isActive).to.equal(false);
   });
-
   
+});
+
+describe('Game', function() {
+  it("creates a new game with the correct specifications", function(){
+    var testGame= new Game();
+    expect(testGame).to.include.keys('playerOne');
+  });
+
+  it("creates a new game with the correct specifications", function(){
+    var testGame= new Game();
+    expect(testGame).to.include.keys('playerTwo');
+  });
+  it("creates a new game with the correct specifications", function(){
+    var testGame= new Game();
+    expect(testGame).to.include.keys('board');
+  });
+
 });
