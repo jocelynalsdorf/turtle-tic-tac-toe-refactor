@@ -139,7 +139,10 @@ var makeBoardBackground = function(){
  $("#inner-div").append("<div class='game-area'><div class='row'><div class='col-md-4 odd' id='tr'></div><div class='col-md-4 even' id='tc'></div><div class='col-md-4 odd' id='tl'></div></div><div class='row'><div class='col-md-4 even' id='mr'></div><div class='col-md-4 odd' id='mc'></div><div class='col-md-4 even' id='ml'></div></div><div class='row'><div class='col-md-4 odd' id='br'></div><div class='col-md-4 even' id='bc'></div><div class='col-md-4 odd' id='bl'></div></div></div>");
   };
 
+
+
 $(document).ready(function(){
+ $("#score-div").hide();
 
   $("#play").click(function(event){
     event.preventDefault();
@@ -147,8 +150,10 @@ $(document).ready(function(){
     makeBoardBackground();
     var game = new Game();
     var board = game.board;
-
-    $(".turnx").toggleClass(game.getTurns().marker); //show whose turn it is
+    $(".turn").text(" ");
+    $(".turn").text(game.getTurns().marker);
+    $("#score-div").show();
+   
 
 
 
@@ -162,9 +167,12 @@ $(document).ready(function(){
        } else if(game.whoWins()) {
         $("#results").text(game.whoWins().marker + " wins!");
        }
-    } console.log(board);  
+    } 
      game.toggleTurns();
+     $(".turn").text(game.getTurns().marker);
   });
+
+  
 
   $("#tc").on("click", function(){
 
@@ -176,8 +184,9 @@ $(document).ready(function(){
        } else if(game.whoWins()) {
         $("#results").text(game.whoWins().marker + " wins!");
        }
-    } console.log(board);
+    } 
       game.toggleTurns();
+      $(".turn").text(game.getTurns().marker);
   });
 
 
@@ -190,8 +199,9 @@ $(document).ready(function(){
          } else if(game.whoWins()) {
           $("#results").text(game.whoWins().marker + " wins!");
          }
-      } console.log(board);
+      } 
       game.toggleTurns();
+      $(".turn").text(game.getTurns().marker);
   });
 
 
@@ -204,8 +214,9 @@ $(document).ready(function(){
        } else if(game.whoWins()) {
         $("#results").text(game.whoWins().marker + " wins!");
        }
-    } console.log(board);
+    } 
       game.toggleTurns();
+      $(".turn").text(game.getTurns().marker);
   });
 
   $("#mc").on("click", function(){
@@ -217,8 +228,9 @@ $(document).ready(function(){
        } else if(game.whoWins()) {
         $("#results").text(game.whoWins().marker + " wins!");
        }
-    }console.log(board);
+    }
       game.toggleTurns();
+      $(".turn").text(game.getTurns().marker);
   });
 
   $("#ml").on("click", function(){
@@ -230,8 +242,9 @@ $(document).ready(function(){
        } else if(game.whoWins()) {
         $("#results").text(game.whoWins().marker + " wins!");
        }
-    } console.log(board);
+    }
       game.toggleTurns();
+      $(".turn").text(game.getTurns().marker);
   });
 
   $("#br").on("click", function(){
@@ -243,8 +256,9 @@ $(document).ready(function(){
        } else if(game.whoWins()) {
         $("#results").text(game.whoWins().marker + " wins!");
        }
-    } console.log(board);
+    } 
       game.toggleTurns();
+      $(".turn").text(game.getTurns().marker);
   });
 
   $("#bc").on("click", function(){
@@ -256,8 +270,9 @@ $(document).ready(function(){
        } else if(game.whoWins()) {
         $("#results").text(game.whoWins().marker + " wins!");
        }
-    } console.log(board);
+    } 
       game.toggleTurns();
+      $(".turn").text(game.getTurns().marker);
   });
 
   $("#bl").on("click", function(){
@@ -269,8 +284,9 @@ $(document).ready(function(){
        } else if(game.whoWins()) {
         $("#results").text(game.whoWins().marker + " wins!");
        }
-    } console.log(board);
+    } 
       game.toggleTurns();
+      $(".turn").text(game.getTurns().marker);
   });
 
 
