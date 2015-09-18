@@ -178,143 +178,143 @@ $(document).ready(function(){
 
   $("#tc").on("click", function(){
 
-   if((!(board.isMarkedYet(0, 1))) && (game.whoWins() === false)) {
-       game.board.mark(0, 1, game.getTurns().marker);
-       $("#tc").text(game.getTurns().marker);
-       if (game.whoWins() === "draw") {
+    if((!(board.isMarkedYet(0, 1))) && (game.whoWins() === false)) {
+      game.board.mark(0, 1, game.getTurns().marker);
+      $("#tc").text(game.getTurns().marker);
+      if (game.whoWins() === "draw") {
         $("#results").text("its a draw").addClass('animated bounceInLeft');
         $("#score-div").hide();
-       } else if(game.whoWins()) {
+        } else if(game.whoWins()) {
         $("#score-div").hide();
         $("#results").text(game.whoWins().marker + " wins!").addClass('animated bounceInLeft');
-       }
+      }
     } 
-      game.toggleTurns();
-      $(".turn").text(game.getTurns().marker);
+    game.toggleTurns();
+    $(".turn").text(game.getTurns().marker);
   });
 
 
   $("#tl").on("click", function(){
     if((!(board.isMarkedYet(0, 2))) && (game.whoWins() === false)) {
-         game.board.mark(0, 2, game.getTurns().marker);
-         $("#tl").text(game.getTurns().marker);
-         if (game.whoWins() === "draw") {
-          $("#results").text("its a draw").addClass('animated bounceInLeft');
-          $("#score-div").hide();
-         } else if(game.whoWins()) {
-          $("#score-div").hide();
-          $("#results").text(game.whoWins().marker + " wins!").addClass('animated bounceInLeft');
-         }
-      } 
-      game.toggleTurns();
-      $(".turn").text(game.getTurns().marker);
+      game.board.mark(0, 2, game.getTurns().marker);
+      $("#tl").text(game.getTurns().marker);
+      if (game.whoWins() === "draw") {
+        $("#results").text("its a draw").addClass('animated bounceInLeft');
+        $("#score-div").hide();
+        } else if(game.whoWins()) {
+        $("#score-div").hide();
+        $("#results").text(game.whoWins().marker + " wins!").addClass('animated bounceInLeft');
+      }
+    } 
+    game.toggleTurns();
+    $(".turn").text(game.getTurns().marker);
   });
 
 
   $("#mr").on("click", function(){
-   if((!(board.isMarkedYet(1, 0))) && (game.whoWins() === false)) {
-       game.board.mark(1, 0, game.getTurns().marker);
-       $("#mr").text(game.getTurns().marker);
-       if (game.whoWins() === "draw") {
+    if((!(board.isMarkedYet(1, 0))) && (game.whoWins() === false)) {
+      game.board.mark(1, 0, game.getTurns().marker);
+      $("#mr").text(game.getTurns().marker);
+      if (game.whoWins() === "draw") {
         $("#results").text("its a draw").addClass('animated bounceInLeft');
         $("#score-div").hide();
-       } else if(game.whoWins()) {
+        } else if(game.whoWins()) {
         $("#score-div").hide();
         $("#results").text(game.whoWins().marker + " wins!").addClass('animated bounceInLeft');
-       }
-    } 
-      game.toggleTurns();
-      $(".turn").text(game.getTurns().marker);
+    }
+  } 
+  game.toggleTurns();
+  $(".turn").text(game.getTurns().marker);
   });
 
   $("#mc").on("click", function(){
-   if((!(board.isMarkedYet(1, 1))) && (game.whoWins() === false)) {
-       game.board.mark(1, 1, game.getTurns().marker);
-       $("#mc").text(game.getTurns().marker);
-       if (game.whoWins() === "draw") {
+    if((!(board.isMarkedYet(1, 1))) && (game.whoWins() === false)) {
+      game.board.mark(1, 1, game.getTurns().marker);
+      $("#mc").text(game.getTurns().marker);
+      if (game.whoWins() === "draw") {
         $("#results").text("its a draw").addClass('animated bounceInLeft');
         $("#score-div").hide();
-       } else if(game.whoWins()) {
+        } else if(game.whoWins()) {
         $("#score-div").hide();
         $("#results").text(game.whoWins().marker + " wins!").addClass('animated bounceInLeft');
-       }
+      }
     }
-      game.toggleTurns();
-      $(".turn").text(game.getTurns().marker);
+    game.toggleTurns();
+    $(".turn").text(game.getTurns().marker);
   });
 
   $("#ml").on("click", function(){
-   if((!(board.isMarkedYet(1, 2))) && (game.whoWins() === false)) {
-       game.board.mark(1, 2, game.getTurns().marker);
-       $("#ml").text(game.getTurns().marker);
-       if (game.whoWins() === "draw") {
+    if((!(board.isMarkedYet(1, 2))) && (game.whoWins() === false)) {
+      game.board.mark(1, 2, game.getTurns().marker);
+      $("#ml").text(game.getTurns().marker);
+      if (game.whoWins() === "draw") {
         $("#results").text("its a draw").addClass('animated bounceInLeft');
         $("#score-div").hide();
-       } else if(game.whoWins()) {
+        } else if(game.whoWins()) {
         $("#score-div").hide();
         $("#results").text(game.whoWins().marker + " wins!").addClass('animated bounceInLeft');
-       }
+      }
     }
-      game.toggleTurns();
-      $(".turn").text(game.getTurns().marker);
+    game.toggleTurns();
+    $(".turn").text(game.getTurns().marker);
   });
 
   $("#br").on("click", function(){
-   if((!(board.isMarkedYet(2, 0))) && (game.whoWins() === false)) {
-       game.board.mark(2, 0, game.getTurns().marker);
-       $("#br").text(game.getTurns().marker);
-       if (game.whoWins() === "draw") {
+    if((!(board.isMarkedYet(2, 0))) && (game.whoWins() === false)) {
+      game.board.mark(2, 0, game.getTurns().marker);
+      $("#br").text(game.getTurns().marker);
+      if (game.whoWins() === "draw") {
         $("#results").text("its a draw").addClass('animated bounceInLeft');
         $("#score-div").hide();
-       } else if(game.whoWins()) {
+        } else if(game.whoWins()) {
         $("#score-div").hide();
         $("#results").text(game.whoWins().marker + " wins!").addClass('animated bounceInLeft');
-       }
+      }
     } 
-      game.toggleTurns();
-      $(".turn").text(game.getTurns().marker);
+    game.toggleTurns();
+    $(".turn").text(game.getTurns().marker);
   });
 
   $("#bc").on("click", function(){
-   if((!(board.isMarkedYet(2, 1))) && (game.whoWins() === false)) {
-       game.board.mark(2, 1, game.getTurns().marker);
-       $("#bc").text(game.getTurns().marker);
-       if (game.whoWins() === "draw") {
+    if((!(board.isMarkedYet(2, 1))) && (game.whoWins() === false)) {
+      game.board.mark(2, 1, game.getTurns().marker);
+      $("#bc").text(game.getTurns().marker);
+      if (game.whoWins() === "draw") {
         $("#results").text("its a draw").addClass('animated bounceInLeft');
         $("#score-div").hide();
-       } else if(game.whoWins()) {
+        } else if(game.whoWins()) {
         $("#score-div").hide();
         $("#results").text(game.whoWins().marker + " wins!").addClass('animated bounceInLeft');;
-       }
+      }
     } 
-      game.toggleTurns();
-      $(".turn").text(game.getTurns().marker);
+    game.toggleTurns();
+    $(".turn").text(game.getTurns().marker);
   });
 
   $("#bl").on("click", function(){
-   if((!(board.isMarkedYet(2, 2))) && (game.whoWins() === false)) {
-       game.board.mark(2, 2, game.getTurns().marker);
-       $("#bl").text(game.getTurns().marker);
-       if (game.whoWins() === "draw") {
+    if((!(board.isMarkedYet(2, 2))) && (game.whoWins() === false)) {
+      game.board.mark(2, 2, game.getTurns().marker);
+      $("#bl").text(game.getTurns().marker);
+      if (game.whoWins() === "draw") {
         $("#results").text("its a draw").addClass('animated bounceInLeft');
         $("#score-div").hide();
-       } else if(game.whoWins()) {
+        } else if(game.whoWins()) {
         $("#score-div").hide();
         $("#results").text(game.whoWins().marker + " wins!").addClass('animated bounceInLeft');
-       }
+      }
     } 
-      game.toggleTurns();
-      $(".turn").text(game.getTurns().marker);
+    game.toggleTurns();
+    $(".turn").text(game.getTurns().marker);
   });
 
 
 
   $("#reset").click(function(event){
-   event.preventDefault();
-   $(".game-area").remove();
-   $("#results").removeClass('animated bounceInLeft').text("");
-   $("#score-div").hide();
-   $(".turn").text("");
+    event.preventDefault();
+    $(".game-area").remove();
+    $("#results").removeClass('animated bounceInLeft').text("");
+    $("#score-div").hide();
+    $(".turn").text("");
   });
 
    });//end of submit event
