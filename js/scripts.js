@@ -142,7 +142,10 @@ var makeBoardBackground = function(){
 
 
 $(document).ready(function(){
- $("#score-div").hide();
+  var computerPlay = false;
+  $("#score-div").hide();
+  $("#computer").hide();
+  $("#message").hide();
 
   $("#play").click(function(event){
     event.preventDefault();
@@ -153,8 +156,8 @@ $(document).ready(function(){
     $(".turn").text(" ");
     $(".turn").text(game.getTurns().marker);
     $("#score-div").show();
+    $("#computer").show();
    
-
 
 
   $("#tr").on("click", function(){
@@ -163,7 +166,7 @@ $(document).ready(function(){
       game.board.mark(0, 0, game.getTurns().marker);
       $("#tr").text(game.getTurns().marker);
         if (game.whoWins() === "draw"){
-          $("#results").text("its a draw").addClass('animated bounceInLeft');
+          $("#results").text("It's a draw").addClass('animated bounceInLeft');
           $("#score-div").hide();
         } else if(game.whoWins()) {
           $("#score-div").hide();
@@ -180,7 +183,7 @@ $(document).ready(function(){
       game.board.mark(0, 1, game.getTurns().marker);
       $("#tc").text(game.getTurns().marker);
       if (game.whoWins() === "draw") {
-        $("#results").text("its a draw").addClass('animated bounceInLeft');
+        $("#results").text("It's a draw").addClass('animated bounceInLeft');
         $("#score-div").hide();
         } else if(game.whoWins()) {
         $("#score-div").hide();
@@ -196,7 +199,7 @@ $(document).ready(function(){
       game.board.mark(0, 2, game.getTurns().marker);
       $("#tl").text(game.getTurns().marker);
       if (game.whoWins() === "draw") {
-        $("#results").text("its a draw").addClass('animated bounceInLeft');
+        $("#results").text("It's a draw").addClass('animated bounceInLeft');
         $("#score-div").hide();
         } else if(game.whoWins()) {
         $("#score-div").hide();
@@ -212,7 +215,7 @@ $(document).ready(function(){
       game.board.mark(1, 0, game.getTurns().marker);
       $("#mr").text(game.getTurns().marker);
       if (game.whoWins() === "draw") {
-        $("#results").text("its a draw").addClass('animated bounceInLeft');
+        $("#results").text("It's a draw").addClass('animated bounceInLeft');
         $("#score-div").hide();
         } else if(game.whoWins()) {
         $("#score-div").hide();
@@ -228,7 +231,7 @@ $(document).ready(function(){
       game.board.mark(1, 1, game.getTurns().marker);
       $("#mc").text(game.getTurns().marker);
       if (game.whoWins() === "draw") {
-        $("#results").text("its a draw").addClass('animated bounceInLeft');
+        $("#results").text("It's a draw").addClass('animated bounceInLeft');
         $("#score-div").hide();
         } else if(game.whoWins()) {
         $("#score-div").hide();
@@ -244,7 +247,7 @@ $(document).ready(function(){
       game.board.mark(1, 2, game.getTurns().marker);
       $("#ml").text(game.getTurns().marker);
       if (game.whoWins() === "draw") {
-        $("#results").text("its a draw").addClass('animated bounceInLeft');
+        $("#results").text("It's a draw").addClass('animated bounceInLeft');
         $("#score-div").hide();
         } else if(game.whoWins()) {
         $("#score-div").hide();
@@ -260,7 +263,7 @@ $(document).ready(function(){
       game.board.mark(2, 0, game.getTurns().marker);
       $("#br").text(game.getTurns().marker);
       if (game.whoWins() === "draw") {
-        $("#results").text("its a draw").addClass('animated bounceInLeft');
+        $("#results").text("It's a draw").addClass('animated bounceInLeft');
         $("#score-div").hide();
         } else if(game.whoWins()) {
         $("#score-div").hide();
@@ -276,7 +279,7 @@ $(document).ready(function(){
       game.board.mark(2, 1, game.getTurns().marker);
       $("#bc").text(game.getTurns().marker);
       if (game.whoWins() === "draw") {
-        $("#results").text("its a draw").addClass('animated bounceInLeft');
+        $("#results").text("It's a draw").addClass('animated bounceInLeft');
         $("#score-div").hide();
         } else if(game.whoWins()) {
         $("#score-div").hide();
@@ -292,7 +295,7 @@ $(document).ready(function(){
       game.board.mark(2, 2, game.getTurns().marker);
       $("#bl").text(game.getTurns().marker);
       if (game.whoWins() === "draw") {
-        $("#results").text("its a draw").addClass('animated bounceInLeft');
+        $("#results").text("It's a draw").addClass('animated bounceInLeft');
         $("#score-div").hide();
         } else if(game.whoWins()) {
         $("#score-div").hide();
@@ -303,6 +306,17 @@ $(document).ready(function(){
     $(".turn").text(game.getTurns().marker);
   });
 
+  $("#computer").click(function(event){
+    event.preventDefault();
+    computerPlay = true;
+   $("#message").show().addClass('animated bounceInLeft');
+      
+  });
+
+//computer play functions
+  
+  
+  
 
   $("#reset").click(function(event){
     event.preventDefault();
@@ -310,6 +324,9 @@ $(document).ready(function(){
     $("#results").removeClass('animated bounceInLeft').text("");
     $("#score-div").hide();
     $(".turn").text("");
+    $("#message").hide();
+    $("#computer").hide();
+    computer = false;
   });
 
    });//end of submit event
