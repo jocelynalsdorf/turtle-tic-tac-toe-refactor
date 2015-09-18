@@ -1,6 +1,5 @@
 
-#results {
-}
+
 
 #inner-div  {
   height: 424px;
@@ -12,6 +11,9 @@
 #score-div {
   padding-top:20px;
 }
+.btn-group {
+  height: 183px;
+}
 
 .btn-group .btn {
   margin-right:5px;
@@ -22,12 +24,16 @@ height:150px;
 width:150px;
 background-color: #3498db;
 color: #fff;
+text-align: center;
+font-size: 102px;
 }
 .col-md-4.even {
 height:150px;
 width:150px;
 background-color:#2c3e50;
 color: #fff;
+text-align: center;
+font-size: 102px;;
 }
 
 a.navbar-brand {
@@ -42,7 +48,11 @@ a.navbar-brand {
 .center-block {
   margin-top:56px;
 }
-.X {
-  color: red;
+#results {
+  color: #e74c3c;
+  font-size: 35px;
+}
+#score-div {
+  color:  #3498db;
   font-size: 35px;
 }
