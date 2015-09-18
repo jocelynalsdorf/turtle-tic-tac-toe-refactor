@@ -21,7 +21,6 @@ describe('Board', function() {
     testBoard.mark(1,2,"O");
     expect(testBoard.isMarkedYet(1,1)).to.equal(false);
   });
-
   
 });
 
@@ -121,7 +120,5 @@ describe('Game', function() {
     testGame.board.mark(2, 2, "X")
     expect(testGame.whoWins()).to.equal("draw");
   });
-
-
 
 });

@@ -1,6 +1,5 @@
 //will need a player, a board and a game
 
-
 function Player(marker, isActive) {
   this.marker = marker; //will be set to x or o
   this.isActive = isActive; //will be toggled t or f to know whose turn
@@ -16,8 +15,7 @@ Player.prototype.changeTurns = function(){
   }
 };
 
-
-//make empty 2d array (will be all null) so can compare null vs != null to see if square is empty & can be played
+//empty 2d array (will be all null) to compare null vs != null to see if square is empty & can be played
 function Board() { 
   var boardSize = 3;
   var board = [];
@@ -30,14 +28,15 @@ function Board() {
   this.board = board;
 };
 
-
-Board.prototype.mark = function(xcord, ycord, marker){ //this marks a square with the current players marker
+///this marks a square with the current players marker
+Board.prototype.mark = function(xcord, ycord, marker){ 
   if(!this.isMarkedYet(xcord, ycord)) {
     this.board[xcord][ycord] = marker;
   }
 };
 
-Board.prototype.isMarkedYet = function(xcord,ycord){ //checks if the array spot is null or not.if its not null it has been marked already
+//checks if the array spot is null or not.if its not null it has been marked already
+Board.prototype.isMarkedYet = function(xcord,ycord){ 
   if(this.board[xcord][ycord] !== null){
     return this.board[xcord][ycord];
   } 
@@ -55,7 +54,8 @@ function Game(){
   this.board = board;
 };
 
-Game.prototype.getTurns = function(){ //returns whose turn it is
+//returns whose turn it is
+Game.prototype.getTurns = function(){ 
   if(this.playerOne.isActive === true) {
     return this.playerOne;
   }
@@ -63,6 +63,7 @@ Game.prototype.getTurns = function(){ //returns whose turn it is
     return this.playerTwo;
   }
 }
+
 //change whose turn it is
 Game.prototype.toggleTurns = function(){
   this.playerOne.changeTurns();
@@ -137,8 +138,7 @@ var makeBoardBackground = function(){
  $("#inner-div").append("<div class='game-area'><div class='row'><div class='col-md-4 odd' id='tr'></div><div class='col-md-4 even' id='tc'></div><div class='col-md-4 odd' id='tl'></div></div><div class='row'><div class='col-md-4 even' id='mr'></div><div class='col-md-4 odd' id='mc'></div><div class='col-md-4 even' id='ml'></div></div><div class='row'><div class='col-md-4 odd' id='br'></div><div class='col-md-4 even' id='bc'></div><div class='col-md-4 odd' id='bl'></div></div></div>");
   };
 
-
-
+//begin jQuery
 $(document).ready(function(){
   var computerPlay = false;
   var xGuess;
@@ -158,8 +158,7 @@ $(document).ready(function(){
     $("#score-div").show();
     $("#computer").show();
    
-
-
+//click to mark on squares functions
   $("#tr").on("click", function(){
 
     if((!(board.isMarkedYet(0, 0))) && (game.whoWins() === false)) {
@@ -415,12 +414,6 @@ var compuTurn = function() {
     }
   };
 
-
-
-
-
-  
-  
 
   $("#reset").click(function(event){
     event.preventDefault();

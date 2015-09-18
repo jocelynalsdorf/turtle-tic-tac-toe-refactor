@@ -1,6 +1,4 @@
 
-
-
 #inner-div  {
   height: 424px;
   width: 437px;
@@ -28,6 +26,7 @@ color: #fff;
 text-align: center;
 font-size: 102px;
 }
+
 .col-md-4.even {
 height:150px;
 width:150px;
@@ -46,17 +45,21 @@ a.navbar-brand {
 .navbar-inverse .navbar-brand {
   padding: 15px;
 }
+
 .center-block {
   margin-top:56px;
 }
+
 #results {
   color: #e74c3c;
   font-size: 35px;
 }
+
 #score-div {
   color:  #3498db;
   font-size: 35px;
 }
+
 #message {
   color:  #3498db;
   font-size: 15px;
