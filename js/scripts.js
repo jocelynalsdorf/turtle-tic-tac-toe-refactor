@@ -31,7 +31,6 @@ function Board() {
 };
 
 
-
 Board.prototype.mark = function(xcord, ycord, marker){ //this marks a square with the current players marker
   if(!this.isMarkedYet(xcord, ycord)) {
     this.board[xcord][ycord] = marker;
@@ -46,7 +45,6 @@ Board.prototype.isMarkedYet = function(xcord,ycord){ //checks if the array spot 
     return false;
   }
 };
-
 
 function Game(){
   var playerOne = new Player("X", true);
@@ -143,6 +141,8 @@ var makeBoardBackground = function(){
 
 $(document).ready(function(){
   var computerPlay = false;
+  var xGuess;
+  var yGuess;
   $("#score-div").hide();
   $("#computer").hide();
   $("#message").hide();
@@ -175,6 +175,11 @@ $(document).ready(function(){
     } 
       game.toggleTurns();
       $(".turn").text(game.getTurns().marker);
+
+      if((game.getTurns().marker === "O") && computerPlay === true){
+      compuTurn();
+       }
+
   });
 
   $("#tc").on("click", function(){
@@ -192,6 +197,11 @@ $(document).ready(function(){
     } 
     game.toggleTurns();
     $(".turn").text(game.getTurns().marker);
+
+    if((game.getTurns().marker === "O") && computerPlay === true){
+    compuTurn();
+    }
+
   });
 
   $("#tl").on("click", function(){
@@ -208,6 +218,11 @@ $(document).ready(function(){
     } 
     game.toggleTurns();
     $(".turn").text(game.getTurns().marker);
+
+    if((game.getTurns().marker === "O") && computerPlay === true){
+    compuTurn();
+    }
+
   });
 
   $("#mr").on("click", function(){
@@ -224,6 +239,11 @@ $(document).ready(function(){
   } 
   game.toggleTurns();
   $(".turn").text(game.getTurns().marker);
+
+  if((game.getTurns().marker === "O") && computerPlay === true){
+    compuTurn();
+    }
+
   });
 
   $("#mc").on("click", function(){
@@ -240,6 +260,11 @@ $(document).ready(function(){
     }
     game.toggleTurns();
     $(".turn").text(game.getTurns().marker);
+
+    if((game.getTurns().marker === "O") && computerPlay === true){
+    compuTurn();
+    }
+
   });
 
   $("#ml").on("click", function(){
@@ -256,6 +281,11 @@ $(document).ready(function(){
     }
     game.toggleTurns();
     $(".turn").text(game.getTurns().marker);
+
+    if((game.getTurns().marker === "O") && computerPlay === true){
+    compuTurn();
+    }
+
   });
 
   $("#br").on("click", function(){
@@ -272,6 +302,11 @@ $(document).ready(function(){
     } 
     game.toggleTurns();
     $(".turn").text(game.getTurns().marker);
+
+    if((game.getTurns().marker === "O") && computerPlay === true){
+    compuTurn();
+    }
+
   });
 
   $("#bc").on("click", function(){
@@ -288,6 +323,11 @@ $(document).ready(function(){
     } 
     game.toggleTurns();
     $(".turn").text(game.getTurns().marker);
+
+    if((game.getTurns().marker === "O") && computerPlay === true){
+    compuTurn();
+    }
+
   });
 
   $("#bl").on("click", function(){
@@ -304,6 +344,11 @@ $(document).ready(function(){
     } 
     game.toggleTurns();
     $(".turn").text(game.getTurns().marker);
+
+    if((game.getTurns().marker === "O") && computerPlay === true){
+    compuTurn();
+    }
+
   });
 
   $("#computer").click(function(event){
@@ -314,7 +359,66 @@ $(document).ready(function(){
   });
 
 //computer play functions
+
+var compuTurn = function() {
+    var computerMarker;
+    var xGuess = Math.floor(Math.random() * 3);
+    var yGuess = Math.floor(Math.random() * 3);
+
+    if(xGuess === 0 && yGuess === 0) {
+    computerMarker = "#tr";
+    }
+    if(xGuess === 0 && yGuess === 1) {
+    computerMarker = "#tc";
+    }
+    if(xGuess === 0 && yGuess === 2) {
+    computerMarker = "#tl";
+    }
+    if(xGuess === 1 && yGuess === 0) {
+    computerMarker = "#mr";
+    }
+    if(xGuess === 1 && yGuess === 1) {
+    computerMarker = "#mc";
+    }
+    if(xGuess === 1 && yGuess === 2) {
+    computerMarker = "#ml";
+    }
+    if(xGuess === 2 && yGuess === 0) {
+    computerMarker = "#br";
+    }
+    if(xGuess === 2 && yGuess === 1) {
+    computerMarker = "#bc";
+    }
+    if(xGuess === 2 && yGuess === 2) {
+    computerMarker = "#bl";
+    }
+   
+    if((!(board.isMarkedYet(xGuess, yGuess))) && (game.whoWins() === false)) {
+      game.board.mark(xGuess, yGuess, game.getTurns().marker);
+      $(computerMarker).text(game.getTurns().marker);
+      if (game.whoWins() === "draw") {
+        $("#results").text("It's a draw").addClass('animated bounceInLeft');
+        $("#score-div").hide();
+      } 
+      else if(game.whoWins()) {
+        $("#score-div").hide();
+        $("#results").text(game.whoWins().marker + " wins!").addClass('animated bounceInLeft');
+      }
   
+    game.toggleTurns();
+    $(".turn").text(game.getTurns().marker);
+    }
+    
+    else {
+      compuTurn();
+
+    }
+  };
+
+
+
+
+
   
   
 
@@ -326,7 +430,7 @@ $(document).ready(function(){
     $(".turn").text("");
     $("#message").hide();
     $("#computer").hide();
-    computer = false;
+    computerPlay = false;
   });
 
    });//end of submit event
