@@ -174,8 +174,6 @@ $(document).ready(function(){
       $(".turn").text(game.getTurns().marker);
   });
 
-  
-
   $("#tc").on("click", function(){
 
     if((!(board.isMarkedYet(0, 1))) && (game.whoWins() === false)) {
@@ -193,7 +191,6 @@ $(document).ready(function(){
     $(".turn").text(game.getTurns().marker);
   });
 
-
   $("#tl").on("click", function(){
     if((!(board.isMarkedYet(0, 2))) && (game.whoWins() === false)) {
       game.board.mark(0, 2, game.getTurns().marker);
@@ -209,7 +206,6 @@ $(document).ready(function(){
     game.toggleTurns();
     $(".turn").text(game.getTurns().marker);
   });
-
 
   $("#mr").on("click", function(){
     if((!(board.isMarkedYet(1, 0))) && (game.whoWins() === false)) {
@@ -306,7 +302,6 @@ $(document).ready(function(){
     game.toggleTurns();
     $(".turn").text(game.getTurns().marker);
   });
-
 
 
   $("#reset").click(function(event){
