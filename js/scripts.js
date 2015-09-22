@@ -5,7 +5,7 @@ function Player(marker, isActive) {
   this.isActive = isActive; //will be toggled t or f to know whose turn
 };
 
-//can change turns by toggling isActive for a player 
+//can change turns by toggling isActive for a player
 Player.prototype.changeTurns = function(){
   if(this.isActive === true) {
     this.isActive = false;
@@ -16,7 +16,7 @@ Player.prototype.changeTurns = function(){
 };
 
 //empty 2d array (will be all null) to compare null vs != null to see if square is empty & can be played
-function Board() { 
+function Board() {
   var boardSize = 3;
   var board = [];
   for(var row = 0; row < boardSize; row++) {
@@ -29,17 +29,17 @@ function Board() {
 };
 
 ///this marks a square with the current players marker
-Board.prototype.mark = function(xcord, ycord, marker){ 
+Board.prototype.mark = function(xcord, ycord, marker){
   if(!this.isMarkedYet(xcord, ycord)) {
     this.board[xcord][ycord] = marker;
   }
 };
 
 //checks if the array spot is null or not.if its not null it has been marked already
-Board.prototype.isMarkedYet = function(xcord,ycord){ 
+Board.prototype.isMarkedYet = function(xcord,ycord){
   if(this.board[xcord][ycord] !== null){
     return this.board[xcord][ycord];
-  } 
+  }
   else {
     return false;
   }
@@ -55,7 +55,7 @@ function Game(){
 };
 
 //returns whose turn it is
-Game.prototype.getTurns = function(){ 
+Game.prototype.getTurns = function(){
   if(this.playerOne.isActive === true) {
     return this.playerOne;
   }
@@ -117,7 +117,7 @@ if(myBoard[0][0] === myBoard[1][1] && myBoard[2][2] === myBoard[0][0]) {
     }
   }
 
-//check for draw 
+//check for draw
   if (winner === false) {
    for(var row = 0; row < 3; row++) {
       for(var col = 0; col < 3; col++){
@@ -147,6 +147,7 @@ $(document).ready(function(){
   $("#computer").hide();
   $("#message").hide();
 
+
   $("#play").click(function(event){
     event.preventDefault();
     //set up game
@@ -157,28 +158,38 @@ $(document).ready(function(){
     $(".turn").text(game.getTurns().marker);
     $("#score-div").show();
     $("#computer").show();
-   
+
+var results = function(){
+  if (game.whoWins() === "draw") {
+    $("#results").text("It's a draw").addClass('animated bounceInLeft');
+    $("#score-div").hide();
+    } else if(game.whoWins()) {
+    $("#score-div").hide();
+    $("#results").text(game.whoWins().marker + " wins!").addClass('animated bounceInLeft');
+  }
+}
+var nextMoves = function() {
+  game.toggleTurns();
+  $(".turn").text(game.getTurns().marker);
+
+  if((game.getTurns().marker === "O") && computerPlay === true){
+  compuTurn();
+   }
+}
+
+
+
+
+
 //click to mark on squares functions
   $("#tr").on("click", function(){
 
     if((!(board.isMarkedYet(0, 0))) && (game.whoWins() === false)) {
       game.board.mark(0, 0, game.getTurns().marker);
       $("#tr").text(game.getTurns().marker);
-        if (game.whoWins() === "draw"){
-          $("#results").text("It's a draw").addClass('animated bounceInLeft');
-          $("#score-div").hide();
-        } else if(game.whoWins()) {
-          $("#score-div").hide();
-          $("#results").text(game.whoWins().marker + " wins!").addClass('animated bounceInLeft');
-        }
-    } 
-      game.toggleTurns();
-      $(".turn").text(game.getTurns().marker);
-
-      if((game.getTurns().marker === "O") && computerPlay === true){
-      compuTurn();
-       }
-
+      results();
+    }
+    nextMoves();
   });
 
   $("#tc").on("click", function(){
@@ -186,62 +197,27 @@ $(document).ready(function(){
     if((!(board.isMarkedYet(0, 1))) && (game.whoWins() === false)) {
       game.board.mark(0, 1, game.getTurns().marker);
       $("#tc").text(game.getTurns().marker);
-      if (game.whoWins() === "draw") {
-        $("#results").text("It's a draw").addClass('animated bounceInLeft');
-        $("#score-div").hide();
-        } else if(game.whoWins()) {
-        $("#score-div").hide();
-        $("#results").text(game.whoWins().marker + " wins!").addClass('animated bounceInLeft');
-      }
-    } 
-    game.toggleTurns();
-    $(".turn").text(game.getTurns().marker);
-
-    if((game.getTurns().marker === "O") && computerPlay === true){
-    compuTurn();
+      results();
     }
-
+    nextMoves();
   });
 
   $("#tl").on("click", function(){
     if((!(board.isMarkedYet(0, 2))) && (game.whoWins() === false)) {
       game.board.mark(0, 2, game.getTurns().marker);
       $("#tl").text(game.getTurns().marker);
-      if (game.whoWins() === "draw") {
-        $("#results").text("It's a draw").addClass('animated bounceInLeft');
-        $("#score-div").hide();
-        } else if(game.whoWins()) {
-        $("#score-div").hide();
-        $("#results").text(game.whoWins().marker + " wins!").addClass('animated bounceInLeft');
-      }
-    } 
-    game.toggleTurns();
-    $(".turn").text(game.getTurns().marker);
-
-    if((game.getTurns().marker === "O") && computerPlay === true){
-    compuTurn();
-    }
-
+      results();
+  }
+    nextMoves();
   });
 
   $("#mr").on("click", function(){
     if((!(board.isMarkedYet(1, 0))) && (game.whoWins() === false)) {
       game.board.mark(1, 0, game.getTurns().marker);
       $("#mr").text(game.getTurns().marker);
-      if (game.whoWins() === "draw") {
-        $("#results").text("It's a draw").addClass('animated bounceInLeft');
-        $("#score-div").hide();
-        } else if(game.whoWins()) {
-        $("#score-div").hide();
-        $("#results").text(game.whoWins().marker + " wins!").addClass('animated bounceInLeft');
-    }
-  } 
-  game.toggleTurns();
-  $(".turn").text(game.getTurns().marker);
-
-  if((game.getTurns().marker === "O") && computerPlay === true){
-    compuTurn();
-    }
+      results();
+  }
+    nextMoves();
 
   });
 
@@ -249,20 +225,9 @@ $(document).ready(function(){
     if((!(board.isMarkedYet(1, 1))) && (game.whoWins() === false)) {
       game.board.mark(1, 1, game.getTurns().marker);
       $("#mc").text(game.getTurns().marker);
-      if (game.whoWins() === "draw") {
-        $("#results").text("It's a draw").addClass('animated bounceInLeft');
-        $("#score-div").hide();
-        } else if(game.whoWins()) {
-        $("#score-div").hide();
-        $("#results").text(game.whoWins().marker + " wins!").addClass('animated bounceInLeft');
-      }
+      results();
     }
-    game.toggleTurns();
-    $(".turn").text(game.getTurns().marker);
-
-    if((game.getTurns().marker === "O") && computerPlay === true){
-    compuTurn();
-    }
+    nextMoves();
 
   });
 
@@ -270,41 +235,18 @@ $(document).ready(function(){
     if((!(board.isMarkedYet(1, 2))) && (game.whoWins() === false)) {
       game.board.mark(1, 2, game.getTurns().marker);
       $("#ml").text(game.getTurns().marker);
-      if (game.whoWins() === "draw") {
-        $("#results").text("It's a draw").addClass('animated bounceInLeft');
-        $("#score-div").hide();
-        } else if(game.whoWins()) {
-        $("#score-div").hide();
-        $("#results").text(game.whoWins().marker + " wins!").addClass('animated bounceInLeft');
-      }
+      results();
     }
-    game.toggleTurns();
-    $(".turn").text(game.getTurns().marker);
-
-    if((game.getTurns().marker === "O") && computerPlay === true){
-    compuTurn();
-    }
-
+    nextMoves();
   });
 
   $("#br").on("click", function(){
     if((!(board.isMarkedYet(2, 0))) && (game.whoWins() === false)) {
       game.board.mark(2, 0, game.getTurns().marker);
       $("#br").text(game.getTurns().marker);
-      if (game.whoWins() === "draw") {
-        $("#results").text("It's a draw").addClass('animated bounceInLeft');
-        $("#score-div").hide();
-        } else if(game.whoWins()) {
-        $("#score-div").hide();
-        $("#results").text(game.whoWins().marker + " wins!").addClass('animated bounceInLeft');
-      }
-    } 
-    game.toggleTurns();
-    $(".turn").text(game.getTurns().marker);
-
-    if((game.getTurns().marker === "O") && computerPlay === true){
-    compuTurn();
+      results();
     }
+    nextMoves();
 
   });
 
@@ -312,20 +254,9 @@ $(document).ready(function(){
     if((!(board.isMarkedYet(2, 1))) && (game.whoWins() === false)) {
       game.board.mark(2, 1, game.getTurns().marker);
       $("#bc").text(game.getTurns().marker);
-      if (game.whoWins() === "draw") {
-        $("#results").text("It's a draw").addClass('animated bounceInLeft');
-        $("#score-div").hide();
-        } else if(game.whoWins()) {
-        $("#score-div").hide();
-        $("#results").text(game.whoWins().marker + " wins!").addClass('animated bounceInLeft');;
-      }
-    } 
-    game.toggleTurns();
-    $(".turn").text(game.getTurns().marker);
-
-    if((game.getTurns().marker === "O") && computerPlay === true){
-    compuTurn();
+      results();
     }
+    nextMoves();
 
   });
 
@@ -333,28 +264,16 @@ $(document).ready(function(){
     if((!(board.isMarkedYet(2, 2))) && (game.whoWins() === false)) {
       game.board.mark(2, 2, game.getTurns().marker);
       $("#bl").text(game.getTurns().marker);
-      if (game.whoWins() === "draw") {
-        $("#results").text("It's a draw").addClass('animated bounceInLeft');
-        $("#score-div").hide();
-        } else if(game.whoWins()) {
-        $("#score-div").hide();
-        $("#results").text(game.whoWins().marker + " wins!").addClass('animated bounceInLeft');
-      }
-    } 
-    game.toggleTurns();
-    $(".turn").text(game.getTurns().marker);
-
-    if((game.getTurns().marker === "O") && computerPlay === true){
-    compuTurn();
+      results();
     }
-
+    nextMoves();
   });
 
   $("#computer").click(function(event){
     event.preventDefault();
     computerPlay = true;
    $("#message").show().addClass('animated bounceInLeft');
-      
+
   });
 
 //computer play functions
@@ -391,23 +310,23 @@ var compuTurn = function() {
     if(xGuess === 2 && yGuess === 2) {
     computerMarker = "#bl";
     }
-   
+
     if((!(board.isMarkedYet(xGuess, yGuess))) && (game.whoWins() === false)) {
       game.board.mark(xGuess, yGuess, game.getTurns().marker);
       $(computerMarker).text(game.getTurns().marker);
       if (game.whoWins() === "draw") {
         $("#results").text("It's a draw").addClass('animated bounceInLeft');
         $("#score-div").hide();
-      } 
+      }
       else if(game.whoWins()) {
         $("#score-div").hide();
         $("#results").text(game.whoWins().marker + " wins!").addClass('animated bounceInLeft');
       }
-  
+
     game.toggleTurns();
     $(".turn").text(game.getTurns().marker);
     }
-    
+
     else {
       compuTurn();
 
